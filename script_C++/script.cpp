@@ -95,11 +95,11 @@ void create_makefile(std::string path, std::string name, std::string filename) {
 	file << "	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)\n";
 	file << "	@echo \"\n$(G)Program compiled!$(DEF_COLOR)-> $@\\n\"\n\n";
 	file << "clean:\n";
-	file << "	$(RM) $(OBJ)\n";
+	file << "	@$(RM) $(OBJ)\n";
 	file << "	@$(RM) $(OBJ_DIR)\n";
 	file << "	@echo \"$(R)All .o files removed$(DEF_COLOR)\\n\"\n\n";
 	file << "fclean: clean\n";
-	file << "	$(RM) $(NAME)\n";
+	file << "	@$(RM) $(NAME)\n";
 	file << "	@rm -rf $(OBJ_DIR)\n";
 	file << "	@echo \"$(R)OBJ directory removed$(DEF_COLOR)\\n\"\n\n";
 	file << "re: fclean all\n\n";
